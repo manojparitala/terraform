@@ -21,7 +21,7 @@ resource "aws_key_pair" "ubuntu" {
 
 // preperation Work on server scripts
 data "template_file" "prep-work" {
-  template = "${file("modules/files/awx.sh")}"
+  template = "${file("awx.sh")}"
 }
 
 resource "aws_security_group" "ubuntu" {
