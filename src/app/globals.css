@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces Variable", ui-serif, Georgia, Cambria, serif;
+
+  --color-cream: #faf6ef;
+  --color-ink: #1f1a14;
+
+  /* Brand green */
+  --color-basil-50: #f0f7f1;
+  --color-basil-100: #dcede0;
+  --color-basil-200: #bbdbc4;
+  --color-basil-300: #8dc09d;
+  --color-basil-400: #5ea074;
+  --color-basil-500: #3e8456;
+  --color-basil-600: #2e6a44;
+  --color-basil-700: #265638;
+  --color-basil-800: #20452f;
+  --color-basil-900: #1b3927;
+  --color-basil-950: #0d2016;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-basil-200);
+  }
+}
+
+@layer components {
+  .input {
+    @apply block w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2.5 text-sm text-ink shadow-xs transition placeholder:text-stone-400 focus:border-basil-600 focus:ring-3 focus:ring-basil-600/15 focus:outline-none disabled:bg-stone-100 disabled:text-stone-400;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-stone-800;
+  }
+
+  .hint {
+    @apply mt-1.5 text-xs text-stone-500;
+  }
+
+  .chip {
+    @apply inline-flex cursor-pointer items-center rounded-full border border-stone-300 bg-white px-3.5 py-1.5 text-sm text-stone-700 transition select-none hover:border-stone-400 has-checked:border-basil-600 has-checked:bg-basil-50 has-checked:text-basil-800 has-focus-visible:ring-3 has-focus-visible:ring-basil-600/25;
+  }
+}
